@@ -1,36 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
   <title>Frontend Mentor | Todo app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="css/index.css">
+  <script src="js/index.js" defer></script>
 </head>
+
 <body>
 
-  Todo
+  <section class="down">
+    <h1 id="titulo">TODO</h1>
 
-  <!-- Add dynamic number --> items left
+    <div>
+      <label for="text-input"></label>
+      <input type="text" id="text-input" placeholder="Create a new TODO...">
+    </div>
 
-  All
-  Active 
-  Completed
+    <p class="form">
+      <!-- Add dynamic number --> 
+      items left
+    </p> 
+    <p class="form">
+      All
+    </p>
+    <p class="form">
+      Active
+    </p>
+    <p class="form">
+      Completed
+    </p>
+    <p class="form">
+      Clear Completed
+    </p>
 
-  Clear Completed
-
-  Drag and drop to reorder list
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    <p class="form">
+      Drag and drop to reorder list
+    </p>
+  </section>
+    
+  <!--<footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Mateo Geuna</a>.
+    </div>
+  </footer>-->
 </body>
+
 </html>
