@@ -79,15 +79,44 @@ section.down div.input {
     box-shadow: 0px 2px 10px 0px var(--very-light-grayish-blue);
 }
 
+section.down div.input.new-task {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+section.down div.input.new-task div.div-checkbox {
+    flex-basis: 15%;
+}
+
+section.down div.input.new-task div.div-input-task {
+    flex-basis: 85%;
+}
+
+section.down div.input.new-task input#new-task-checkbox {
+    width: 1.3em;
+    height: 1.3em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+
 section.down div.input input#text-input {
     width: 100%;
-    padding-left: 50px;
     height: 50px;
     border-radius: 10px;
     background-color: white;
     border: none;
-    color: var(--light-grayish-blue);
+    outline: none;
 }
+
+
 
 section.down div.notes-todo {
     background-color: white;
