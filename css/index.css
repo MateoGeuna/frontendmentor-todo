@@ -11,7 +11,7 @@
 :root {
     /*PRIMARY*/
     --bright-blue: hsl(220, 98%, 61%);
-    --check-background: linear-gradient (to right, hsl(192, 100%, 67%) to hsl(280, 87%, 65%));
+    --check-background: linear-gradient(to left top, #57ddff, #c058f3);
     
     /*LIGHT THEME*/
     --very-light-gray: hsl(0, 0%, 98%);
@@ -98,8 +98,27 @@ section.down div.new-task div.div-checkbox {
 }
 
 section.down div.new-task div.div-input {
-    flex-basis: 88%;
+    flex-basis: 78%;
 }
+
+div.container-items div.new-task.item-task div.cross {
+    display: none;
+}
+
+div.container-items div.new-task.item-task:hover div.cross {
+    display: flex;
+    flex-basis: 10%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+div.container-items div.new-task.item-task div.cross img {
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+}
+
 
 section.down div.new-task input#new-task-checkbox {
     width: 1.1em;
@@ -108,9 +127,31 @@ section.down div.new-task input#new-task-checkbox {
     border-radius: 50%;
     vertical-align: middle;
     border: 1px solid #ddd;
-    appearance: none;
     outline: none;
     cursor: pointer;
+    appearance: none;
+}
+
+
+section.down div.new-task input.task-checkbox {
+    width: 1.1em;
+    height: 1.1em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    outline: none;
+    cursor: pointer;
+    appearance: none;
+}
+
+section.down div.new-task input.task-checkbox:checked {
+    background: var(--check-background);
+}
+
+div.new-task.item-task.item-task-checked div.div-input p {
+    text-decoration: line-through;
+    color: var(--dark-grayish-blue);
 }
 
 
