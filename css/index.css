@@ -145,11 +145,31 @@ section.down div.new-task input.task-checkbox {
     appearance: none;
 }
 
+div.container-items div.new-task.item-task-checked div.div-checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.div-checkbox img#check-icon {
+    position: absolute;
+}
+
+section.down div.new-task input.task-checkbox:checked  img#check-icon {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: var(--check-background);
+}
+
+
 section.down div.new-task input.task-checkbox:checked {
     background: var(--check-background);
 }
 
-div.new-task.item-task.item-task-checked div.div-input p {
+
+/* revisar texto*/
+section.down div.new-task input.task-checkbox:checked  div.new-task.item-task.item-task-checked div.div-input p {
     text-decoration: line-through;
     color: var(--dark-grayish-blue);
 }
