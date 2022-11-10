@@ -147,6 +147,7 @@ section.down div.new-task input.task-checkbox {
 
 section.down div.new-task input.task-checkbox:checked {
     background: var(--check-background);
+    position: relative;
 }
 
 section.down div.new-task input.task-checkbox:checked:before{
@@ -157,6 +158,8 @@ section.down div.new-task input.task-checkbox:checked:before{
     background-repeat: no-repeat;
     height: 19px;
     background-position: center;
+    top: 0;
+    left: 0;
 }
 
 
