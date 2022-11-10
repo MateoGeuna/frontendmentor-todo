@@ -128,7 +128,6 @@ section.down div.new-task input#new-task-checkbox {
     vertical-align: middle;
     border: 1px solid #ddd;
     outline: none;
-    cursor: pointer;
     appearance: none;
 }
 
@@ -145,31 +144,24 @@ section.down div.new-task input.task-checkbox {
     appearance: none;
 }
 
-div.container-items div.new-task.item-task-checked div.div-checkbox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-div.div-checkbox img#check-icon {
-    position: absolute;
-}
-
-section.down div.new-task input.task-checkbox:checked  img#check-icon {
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    background: var(--check-background);
-}
-
 
 section.down div.new-task input.task-checkbox:checked {
     background: var(--check-background);
 }
 
+section.down div.new-task input.task-checkbox:checked:before{
+    width: 19px;
+    content: " ";
+    background-image: url(../images/icon-check.svg);
+    position: absolute;
+    background-repeat: no-repeat;
+    height: 19px;
+    background-position: center;
+}
+
 
 /* revisar texto*/
-section.down div.new-task input.task-checkbox:checked  div.new-task.item-task.item-task-checked div.div-input p {
+div.new-task.item-task.item-task-checked div.div-input p {
     text-decoration: line-through;
     color: var(--dark-grayish-blue);
 }
