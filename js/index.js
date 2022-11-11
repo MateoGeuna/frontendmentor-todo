@@ -20,56 +20,35 @@ checkedCheckbox.addEventListener("click", function () {
 })
 
 function addNewTask() {
+    const str = newTaskInput.value;
+    const str2 = str.charAt(0).toUpperCase() + str.slice(1);
     const newId = taskList.length > 0 ? taskList[taskList.length - 1].id + 1 : 1;
-    if (newTaskInput.value.trim() !== "") {
+    if (str2.trim() !== "") {
         taskList.push({
             id: newId,
-            description: newTaskInput.value,
+            description: str2,
             isCompleted: false,
         })
     }
 
     newTaskInput.value = "";
-    showTaskList();
+    showTaskList('all');
 };
 
-let taskList = [
-    {
-        id: 1,
-        description: 'Complete online JavaScript course',
-        isCompleted: true,
-    },
-    {
-        id: 2,
-        description: 'Jog around the park 3x',
-        isCompleted: false,
-    },
-    {
-        id: 3,
-        description: '10 minutes meditation',
-        isCompleted: false,
-    },
-    {
-        id: 4,
-        description: 'Read for 1 hour',
-        isCompleted: false,
-    },
-    {
-        id: 5,
-        description: 'Pick up groceries',
-        isCompleted: false,
-    },
-    {
-        id: 6,
-        description: 'Complete Todo App on Frontend Mentor',
-        isCompleted: false,
-    }
-];
-
-
-function showTaskList() {
+/**
+ * 
+ * @param {string} type ['all' | 'completed' | 'no-completed']
+ */
+function showTaskList(type = 'all') {
     document.getElementById("container-items").innerHTML = "";
     for (let task of taskList) {
+        if(type === 'completed' && !task.isCompleted) {
+            continue;
+        }
+        if(type === 'no-completed' && task.isCompleted) {
+            continue;
+        }
+
         document.getElementById("container-items").innerHTML += `
             <div id="item-task-${task.id}" class="new-task item-task ${task.isCompleted ? 'item-task-checked' : ''}">
                 <div class="div-checkbox">
@@ -84,15 +63,17 @@ function showTaskList() {
             </div>
         `;
     }
+    updateItemsLeft();
 }
 
-showTaskList();
+showTaskList('all');
 
 function changeListCheck(id) {
     let checkBoxChecked = document.getElementById(`item-task-${id}`);
     checkBoxChecked.classList.toggle("item-task-checked");
     const findTask = taskList.find(task => task.id == id);
     findTask.isCompleted = !findTask.isCompleted;
+    updateItemsLeft();
 }
 
 
@@ -100,13 +81,37 @@ function deleteTask(id) {
     let findTask = taskList.findIndex(task => task.id == id);
     taskList.splice(findTask, 1);
     document.getElementById(`item-task-${id}`).remove();
+    updateItemsLeft();
 }
 
-/*
-const personaEliminar = 'p3';
+function updateItemsLeft () {
+    let count = 0;
+    for (const task2 of taskList) {
+        if (!task2.isCompleted) {
+            count++;
+        }
+    }
+    document.getElementById("items-left").innerHTML = count;
+    
+}
 
-const index = personas.findIndex( x => x.id === personaEliminar );
+function allTasks() {
 
-personas.splice( index, 1 );
-console.log( personas ); 
- */
+}
+
+
+function clearCompleted() {
+    let newCompletedDelete = [];
+
+    for (const task of taskList) {
+        if (task.isCompleted) {
+            newCompletedDelete.push(task.id);
+        }
+    }
+    
+    for (const id of newCompletedDelete) {
+        deleteTask(id);
+    }
+}
+
+

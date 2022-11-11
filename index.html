@@ -8,6 +8,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <title>Frontend Mentor | Todo app</title>
   <link rel="stylesheet" href="css/index.css">
+  <script src="js/store.js" defer></script>
   <script src="js/index.js" defer></script>
 </head>
 
@@ -34,20 +35,21 @@
       
       <footer class="filters">
         <div class="options-filters">
-          <p class="item-option-filter">
+          <p  class="item-option-filter link">
             <!--Add dynamic number-->
+            <span id="items-left">5</span>
             items left
           </p>
-          <p class="item-option-filter">
+          <p onclick="showTaskList('all')" class="item-option-filter link">
             All
           </p>
-          <p class="item-option-filter">
+          <p onclick="showTaskList('no-completed')" class="item-option-filter link">
             Active
           </p>
-          <p class="item-option-filter">
+          <p onclick="showTaskList('completed')" class="item-option-filter link">
             Completed
           </p>
-          <p class="item-option-filter">
+          <p onclick="clearCompleted()" class="item-option-filter link">
             Clear Completed
           </p>
   

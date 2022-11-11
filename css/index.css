@@ -241,3 +241,7 @@ footer.filters div.options-filters p {
 .attribution a {
     color: hsl(228, 45%, 44%);
 }
+
+.link {
+    cursor: pointer;
+}
