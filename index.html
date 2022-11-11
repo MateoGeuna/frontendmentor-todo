@@ -32,31 +32,38 @@
     <div class="notes-todo list-task">
       <div id="container-items" class="container-items">
       </div>
-      
+
       <footer class="filters">
-        <div class="options-filters">
-          <p  class="item-option-filter link">
+        <div class="options-filters box-left">
+          <p class="item-option-filter">
             <!--Add dynamic number-->
             <span id="items-left">5</span>
             items left
           </p>
-          <p onclick="showTaskList('all')" class="item-option-filter link">
+        </div>
+        <div class="options-filters change">
+          <!-- Opciones de filtro -->
+          <p onclick="showTaskList('all')" id="item-option-filter-all" class="item-option-filter link filter-active">
             All
           </p>
-          <p onclick="showTaskList('no-completed')" class="item-option-filter link">
+          <p onclick="showTaskList('no-completed')" id="item-option-filter-no-completed"
+            class="item-option-filter link">
             Active
           </p>
-          <p onclick="showTaskList('completed')" class="item-option-filter link">
+          <p onclick="showTaskList('completed')" id="item-option-filter-completed" class="item-option-filter link">
             Completed
           </p>
+          <!-- FIN Opciones de filtro -->
+        </div>
+        <div class="options-filters box-right">
           <p onclick="clearCompleted()" class="item-option-filter link">
             Clear Completed
           </p>
-  
         </div>
-      </footer>
     </div>
-    
+    </footer>
+    </div>
+
     <p class="form">
       Drag and drop to reorder list
     </p>

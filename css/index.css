@@ -223,16 +223,62 @@ section.down p.form {
     color: var(--dark-grayish-blue);
 }
 
-footer.filters div.options-filters {
+section.down div.notes-todo.list-task footer.filters div.options-filters.change {
+    flex-basis: 50%;
+}
+
+.box-left {
+    flex-basis: 25%;
+}
+
+.box-right {
+    flex-basis: 25%;
+}
+
+footer.filters {
     display: flex;
     justify-content: space-around;
+    align-items: center;
+}
+
+footer.filters div.options-filters {
+    display: flex;
+    justify-content: space-evenly;
     height: var(--box-height);
     align-items: center;
 }
 
 footer.filters div.options-filters p {
     font-size: 13px;
+    color: var(--dark-grayish-blue);
 }
+
+footer.filters div.options-filters p.filter-active {
+    color: var(--bright-blue);
+}
+
+p#item-option-filter-all {
+    padding: 0px 0px 0px 50px;
+}
+
+p#item-option-filter-no-completed {
+    margin: 0px -10px 0px -10px;
+}
+
+p#item-option-filter-completed {
+    padding: 0px 50px 0px 0px;
+}
+
+div.option-filter.change p#item-option-filter-all {
+    margin: 0px -30px 0px 0px;
+}
+
+
+div.option-filter.change p#item-option-filter-completed {
+    margin: 0px 0px 0px -30px; 
+}
+
+
 .attribution {
     font-size: 11px;
     text-align: center;
@@ -244,4 +290,12 @@ footer.filters div.options-filters p {
 
 .link {
     cursor: pointer;
+}
+
+.filter-active {
+    color: var(--bright-blue)
+}
+
+p.item-option-filter span#items-left {
+    font-size: 13px;
 }

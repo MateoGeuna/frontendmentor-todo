@@ -39,7 +39,7 @@ function addNewTask() {
  * 
  * @param {string} type ['all' | 'completed' | 'no-completed']
  */
-function showTaskList(type = 'all') {
+function showTaskList(type) {
     document.getElementById("container-items").innerHTML = "";
     for (let task of taskList) {
         if(type === 'completed' && !task.isCompleted) {
@@ -48,7 +48,6 @@ function showTaskList(type = 'all') {
         if(type === 'no-completed' && task.isCompleted) {
             continue;
         }
-
         document.getElementById("container-items").innerHTML += `
             <div id="item-task-${task.id}" class="new-task item-task ${task.isCompleted ? 'item-task-checked' : ''}">
                 <div class="div-checkbox">
@@ -64,6 +63,7 @@ function showTaskList(type = 'all') {
         `;
     }
     updateItemsLeft();
+    changeColorItems(type);
 }
 
 showTaskList('all');
@@ -92,17 +92,10 @@ function updateItemsLeft () {
         }
     }
     document.getElementById("items-left").innerHTML = count;
-    
 }
-
-function allTasks() {
-
-}
-
 
 function clearCompleted() {
     let newCompletedDelete = [];
-
     for (const task of taskList) {
         if (task.isCompleted) {
             newCompletedDelete.push(task.id);
@@ -114,4 +107,26 @@ function clearCompleted() {
     }
 }
 
+
+// Desarrollar una función que reciba un parámetro (type)
+    // el parametro type podra tomar los valores "all", "completed" y "no-completed"
+// La funcion en primer lugar eliminará la clase "filter-active" de los elementos "item-option-filter"
+// Luego agregara la clase "filter-active" al elemento con id "item-option-filter-[type]"
+function changeColorItems(type) {
+    const optFilterAll = document.getElementById('item-option-filter-all');
+    const optFilterCompleted = document.getElementById('item-option-filter-completed');
+    const optFilterNoCompleted = document.getElementById('item-option-filter-no-completed');
+
+    optFilterAll.classList.remove('filter-active');
+    optFilterCompleted.classList.remove('filter-active');
+    optFilterNoCompleted.classList.remove('filter-active');
+
+    if(type === 'completed') {
+        optFilterCompleted.classList.add('filter-active');
+    } else if (type === 'no-completed') {
+        optFilterNoCompleted.classList.add('filter-active');
+    } else {
+        optFilterAll.classList.add('filter-active');
+    }
+}
 
