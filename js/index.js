@@ -33,6 +33,7 @@ function addNewTask() {
 
     newTaskInput.value = "";
     showTaskList('all');
+    setTaskListFromLocalStorage(taskList);
 };
 
 /**
@@ -74,6 +75,7 @@ function changeListCheck(id) {
     const findTask = taskList.find(task => task.id == id);
     findTask.isCompleted = !findTask.isCompleted;
     updateItemsLeft();
+    setTaskListFromLocalStorage(taskList);
 }
 
 
@@ -82,6 +84,7 @@ function deleteTask(id) {
     taskList.splice(findTask, 1);
     document.getElementById(`item-task-${id}`).remove();
     updateItemsLeft();
+    setTaskListFromLocalStorage(taskList);
 }
 
 function updateItemsLeft () {
@@ -105,6 +108,7 @@ function clearCompleted() {
     for (const id of newCompletedDelete) {
         deleteTask(id);
     }
+    setTaskListFromLocalStorage(taskList);
 }
 
 
@@ -130,3 +134,7 @@ function changeColorItems(type) {
     }
 }
 
+function changeTheme() {
+    
+    alert("CAMBIAR TEMA");
+}
