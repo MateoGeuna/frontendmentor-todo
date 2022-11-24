@@ -53,11 +53,12 @@ body {
     background-image: url("../images/bg-desktop-light.jpg");
     background-repeat: no-repeat;
     background-size: 100vw 40vh;
-    background-color: var(--very-light-gray);
+    background-color: var(--very-light-grayish-blue);
 }
 
 [data-theme="dark"] body {
     background-image: url("../images/bg-desktop-dark.jpg");
+    background-color: var(--very-light-gray);
 }
 
 [data-theme="dark"] section.down div.notes-todo,
@@ -87,8 +88,13 @@ body {
 }
 
 [data-theme="dark"] footer.filters div.options-filters.change p:hover,
-[data-theme="dark"] footer.filters div.options-filters p:hover {
+[data-theme="dark"] footer.filters div.options-filters.box-right p:hover {
     color: var(--dark-grayish-blue);
+}
+
+[data-theme="dark"] section.down div.new-task-container {
+    border-radius: 10px;
+    box-shadow: 0px 2px 2px 0px var(--very-light-gray);
 }
 
 section.down {
@@ -123,8 +129,7 @@ section.down div.title-image img {
 section.down div.new-task-container {
     border-radius: 10px;
     background-color: white;
-    border: 1px solid var(--very-light-grayish-blue);
-    box-shadow: 0px 2px 10px 0px var(--very-light-grayish-blue);
+    box-shadow: 0px 1px 1px 0px var(--very-light-grayish-blue);
 }
 
 section.down div.new-task {
@@ -217,13 +222,12 @@ div.new-task.item-task.item-task-checked div.div-input p {
 }
 
 footer.filters div.options-filters.change p:hover,
-footer.filters div.options-filters p:hover {
+footer.filters div.options-filters.box-right p:hover {
     color: var(--very-dark-grayish-blue);
 }
 
 section.down div.new-task input#text-input {
     width: 100%;
-    border-radius: 10px;
     background-color: white;
     border: none;
     outline: none;
