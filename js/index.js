@@ -134,7 +134,22 @@ function changeColorItems(type) {
     }
 }
 
+let CURRENT_THEME = 'light';
+
 function changeTheme() {
-    
-    alert("CAMBIAR TEMA");
+    if(CURRENT_THEME === 'light') {
+        // poner imagen de luna
+        document.getElementById("change-theme").src = "./images/icon-sun.svg";
+        document.documentElement.setAttribute('data-theme', 'dark');
+        
+        // cambiar el valor de CURRENT_THEME a dark
+        CURRENT_THEME = 'dark';
+    } else {
+        // poner imagen
+        document.getElementById("change-theme").src = "./images/icon-moon.svg";
+        document.documentElement.setAttribute('data-theme', 'ligth');
+        // cambiar el valor de CURRENT_THEME a light
+        CURRENT_THEME = 'light';
+    }
 }
+
